@@ -1,4 +1,4 @@
-# Goodmorning
+# Wordpress Starter Theme
 Webpack, Babel
 
 # Development
