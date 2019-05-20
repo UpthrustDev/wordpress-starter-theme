@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+.htaccess
+debug.log
+
+node_modules/
