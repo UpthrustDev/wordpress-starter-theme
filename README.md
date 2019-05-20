@@ -1,2 +1,2 @@
-# wordpress-starter-theme
+# Wordpress Starter Theme
 Internal Wordpress Framework
