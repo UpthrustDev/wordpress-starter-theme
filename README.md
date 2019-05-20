@@ -1,2 +1,8 @@
-# Wordpress Starter Theme
-Internal Wordpress Start Theme
+# Goodmorning
+Webpack, Babel
+
+# Development
+npm run develop
+
+# Production (.babelrc)
+npm run build

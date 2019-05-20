@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-bold);
+  font-weight: normal;
+  color: var(--color-black);
+}
+h1 {
+  @include rfs(50);
+}
+h2 {
+  @include rfs(42);
+}
+h3 {
+  @include rfs(36);
+}
+h4 {
+  @include rfs(28);
+}
+h5 {
+  @include rfs(24);
+}
+h6 {
+  @include rfs(20);
+}
+p {
+  color: var(--color-black);
+  font-family: var(--font-normal);
+  font-weight: normal;
+}
+strong,
+b {
+  font-family: var(--font-default);
+  font-weight: normal;
+}
+a {
+  color: var(--color-black);
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

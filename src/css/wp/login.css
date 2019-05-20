@@ -1,0 +1,49 @@
+body.login {
+  background: #FFFACC;
+}
+body.login div#login {
+	width: 90%;
+	max-width: 40rem;
+}
+body.login div#login h1 {  }
+body.login div#login h1 a {
+  width: 100%;
+  background-image: url('../../img/brand/logo-goodmorning.svg');
+  background-size: 280px;
+  background-position: 50%;
+  margin-bottom: 0;
+}
+body.login div#login p.message {
+  border-radius: 4px;
+}
+
+body.login #login #loginform {
+  border-radius: 8px;
+	border: 2px solid black;
+	box-shadow: none;
+}
+body.login div#login form#loginform p {}
+body.login div#login form#loginform p label {  }
+body.login div#login form#loginform input { box-shadow: none; }
+body.login div#login form#loginform input:focus { }
+body.login div#login form#loginform input#user_login {}
+body.login div#login form#loginform input#user_pass {}
+body.login div#login form#loginform p.forgetmenot {  }
+body.login div#login form#loginform p.forgetmenot input#rememberme {  }
+body.login div#login form#loginform p.submit { }
+body.login div#login form#loginform p.submit input#wp-submit { background-color: white; border:2px solid black; border-color: black; color: black; text-shadow: none; box-shadow: none; }
+body.login div#login form#loginform p.submit input#wp-submit:hover { background-color: white; border-color: black; }
+
+body.login input[type=checkbox]:checked:before {
+  color: black;
+}
+
+// FORM
+body.login div#login p#nav { }
+body.login div#login p#nav a { color: black; opacity: 1; }
+body.login div#login p#nav a:hover { color: black; opacity: 1; }
+
+// BACK TO
+body.login div#login p#backtoblog { }
+body.login div#login p#backtoblog a { color: black; opacity: 1; }
+body.login div#login p#backtoblog a:hover { color: black; }

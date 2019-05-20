@@ -1,0 +1,22 @@
+:root {
+	--color-white: #ffffff;
+	--color-black: hsla(0, 0%, 0%, 1);
+	--color-black-80: #0D0D0D;
+	--color-black-50: hsla(0, 0%, 5%, .5);
+	--color-black-30: hsla(0, 0%, 5%, .3);
+	--color-black-10: hsla(0, 0%, 5%, .1);
+  --border-radius-small: 4px;
+	--border-radius-large: 8px;
+  --easeInOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --font-normal: 'Helvetica Neue', Helvetica, Verdana, Geneva, Arial, sans-serif;
+	--font-bold: 'Helvetica Neue', Helvetica, Verdana, Geneva, Arial, sans-serif;
+	--container: 132rem;
+	--grid-gap: 2rem;
+}
+
+@custom-media --bp-sm (min-width: 576px);
+@custom-media --bp-md (min-width: 768px);
+@custom-media --bp-lg (min-width: 992px);
+@custom-media --bp-xl (min-width: 1200px);
+@custom-media --bp-xxl (min-width: 1440px);
+@custom-media --bp-xxxl (min-width: 1600px);
