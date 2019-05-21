@@ -1,25 +1,25 @@
 <?php
 
-	// PRODUCTS
-	add_action( 'init', 'cpt_faq_init' );
+	// CPT NAME HERE
+	add_action( 'init', 'cpt_CPTNAMEHERE_init' );
 
-	function cpt_faq_init() {
+	function cpt_CPTNAMEHERE_init() {
 
 		$labels = array(
-			'name'               => _x( 'FAQ', 'goodmorning' ),
-			'singular_name'      => _x( 'FAQ', 'goodmorning' ),
-			'menu_name'          => _x( 'FAQ', 'goodmorning' ),
-			'name_admin_bar'     => _x( 'FAQ', 'goodmorning' ),
-			'add_new'            => _x( 'New FAQ', 'goodmorning' ),
-			'add_new_item'       => __( 'Add new FAQ', 'goodmorning' ),
-			'new_item'           => __( 'New FAQ', 'goodmorning' ),
-			'edit_item'          => __( 'Edit FAQ', 'goodmorning' ),
-			'view_item'          => __( 'View FAQ', 'goodmorning' ),
-			'all_items'          => __( 'All FAQs', 'goodmorning' ),
-			'search_items'       => __( 'Search FAQs', 'goodmorning' ),
-			'parent_item_colon'  => __( '', 'mint' ),
-			'not_found'          => __( '', 'mint' ),
-			'not_found_in_trash' => __( '', 'mint' )
+			'name'               => _x( 'CPTNAMEHERE', 'THEMENAME' ),
+			'singular_name'      => _x( 'CPTNAMEHERE', 'THEMENAME' ),
+			'menu_name'          => _x( 'CPTNAMEHERE', 'THEMENAME' ),
+			'name_admin_bar'     => _x( 'CPTNAMEHERE', 'THEMENAME' ),
+			'add_new'            => _x( 'New CPTNAMEHERE', 'THEMENAME' ),
+			'add_new_item'       => __( 'Add new CPTNAMEHERE', 'THEMENAME' ),
+			'new_item'           => __( 'New CPTNAMEHERE', 'THEMENAME' ),
+			'edit_item'          => __( 'Edit CPTNAMEHERE', 'THEMENAME' ),
+			'view_item'          => __( 'View CPTNAMEHERE', 'THEMENAME' ),
+			'all_items'          => __( 'All CPTNAMEHERE', 'THEMENAME' ),
+			'search_items'       => __( 'Search CPTNAMEHERE', 'THEMENAME' ),
+			'parent_item_colon'  => __( '', 'THEMENAME' ),
+			'not_found'          => __( '', 'THEMENAME' ),
+			'not_found_in_trash' => __( '', 'THEMENAME' )
 		);
 
 		$args = array(
@@ -28,18 +28,18 @@
 			'publicly_queryable' => true,
 			'show_ui'            => true,
 			'show_in_menu'       => true,
-			'menu_icon'			 		 => 'dashicons-testimonial',
+			'menu_icon'			 		 => '', // Menu icon -> https://developer.wordpress.org/resource/dashicons/
 			'query_var'          => true,
-			'rewrite'            => array( 'slug' => 'question-answer' ),
+			'rewrite'            => array( 'slug' => '' ), // change permalink slug (optional, recommended)(WPML translateable)
 			'capability_type'    => 'post',
 			'has_archive'        => false,
 			'hierarchical'       => false,
 			'menu_position'      => null,
-			'supports'           => array( 'title', 'thumbnail' ),
-			'show_in_rest'			 => true
+			'supports'           => array( 'title', 'thumbnail' ), // More options possible
+			'show_in_rest'			 => true // Gutenberg & REST API activation
 		);
 
-		register_post_type( 'cpt_faq', $args );
+		//register_post_type( 'cpt_CPTNAMEHERE', $args );
 
 	}
 
