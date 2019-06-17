@@ -23,9 +23,6 @@
     &.is-active {
       color: var(--color-black);
       font-family: var(--font-bold);
-      &:before {
-        background: var(--color-shade-3);
-      }
     }
   }
 }

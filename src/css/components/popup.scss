@@ -1,6 +1,3 @@
-/* ----------------------------------------
-popup
----------------------------------------- */
 .popup {
   position: fixed;
   top: 0;
@@ -39,35 +36,6 @@ popup
 			margin: 10rem auto;
     }
   }
-	& .popup__video {
-		width: 90%;
-    max-width: 120rem;
-		margin: 0 auto 0 auto;
-		opacity: 0;
-		transform: translate3d(0, 5rem, 0);
-		transition: all .4s var(--easeInOutCubic);
-		& .video-holder {
-			width: 100%;
-			position: relative;
-			overflow: hidden;
-			background-color: var(--color-black);
-			box-shadow: var(--box-shadow-hard);
-			border-radius: var(--border-radius);
-			&:after {
-				content: '';
-				display: block;
-				padding-bottom: 56.25%;
-			}
-			& iframe,
-			& video {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
-		}
-	}
   & .popup__close {
     position: absolute;
     top: 2rem;
@@ -85,20 +53,7 @@ popup
     visibility: visible;
     transition: opacity 400ms;
 		display: block;
-		& .popup__box,
-		& .popup__video {
-			opacity: 1;
-			transform: translate3d(0, 0, 0);
-		}
   }
-	&.popup--video {
-		& .popup__inner {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-	}
 }
 
 .popup-active {
@@ -107,7 +62,4 @@ popup
     overflow: visible;
     height: 100%;
   }
-	& .main-header {
-		z-index: 0;
-	}
 }

@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@vimeo/player": "latest",
     "blazy": "latest",
     "bowser": "latest",
     "swiper": "latest",

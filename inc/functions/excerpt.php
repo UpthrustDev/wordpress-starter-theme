@@ -9,7 +9,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 if ( ! function_exists( 'custom_excerpt_more' ) ) {
 	function custom_excerpt_more($more) {
 		global $post;
-		return ''. __('...', 'themify') .'';
+		return ''. __('...', 'THEMENAME') .'';
 	}
 }
 add_filter('excerpt_more', 'custom_excerpt_more');

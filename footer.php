@@ -1,19 +1,20 @@
-        </main>
-        <footer class="l-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-								<a class="l-footer-badge" href="https://www.gafas.be" target="_blank">
-			            <div class="l-footer-badge__text">site by</div>
-			            <div class="l-footer-badge__logo">
-			              <img src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== class="lazy" data-src="<?php echo get_template_directory_uri(); ?>/src/img/brand/logo-gafas.svg" alt="Gafas.">
-			            </div>
-			          </a>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    <?php wp_footer(); ?>
-  </body>
-</html>
+<?php
+/**
+ * Third party plugins that hijack the theme will call wp_footer() to get the footer template.
+ * We use this to end our output buffer (started in header.php) and render into the view/page-plugin.twig template.
+ *
+ * If you're not using a plugin that requries this behavior (ones that do include Events Calendar Pro and
+ * WooCommerce) you can delete this file and header.php
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ * @since   Timber 0.1
+ */
+$timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile
+if ( ! isset( $timberContext ) ) {
+	throw new \Exception( 'Timber context not set in footer.' );
+}
+$timberContext['content'] = ob_get_contents();
+ob_end_clean();
+$templates = array( 'page-plugin.twig' );
+Timber::render( $templates, $timberContext );

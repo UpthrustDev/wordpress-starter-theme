@@ -14,10 +14,13 @@ import isInViewPlay from './js/utils/inview-play'
 ----------------------------------------- */
 
 const initScripts = {
+
   init: function () {
     browserClasses()
     lazyLoad()
 		isInViewCheck()
+		isInViewPlay()
   }
+
 }
 initScripts.init()
