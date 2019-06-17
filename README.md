@@ -8,4 +8,4 @@ npm run develop
 npm run build
 
 # Timber
-Docs -> https://timber.github.io/docs/
+https://timber.github.io/docs/
