@@ -1,9 +1,7 @@
 <?php
-/*
-Template Name: Home
-*/
-get_header();?>
+/**
+ * Template Name: Home
+ * Description: A Page Template with a darker design.
+ */
 
-
-
-<?php get_footer();?>
+// Code to display Page goes here...
