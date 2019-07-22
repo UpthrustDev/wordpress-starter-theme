@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Home
- * Description: A Page Template with a darker design.
+ * Description: A Home Page Template
  */
 
 // Code to display Page goes here...

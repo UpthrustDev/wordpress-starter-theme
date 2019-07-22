@@ -1,32 +1,28 @@
 {% block html_head_container %}
 
-{% include 'html-header.twig' %}
+{% include 'html-head.twig' %}
 	{% block head %}
 	{% endblock %}
-</head>
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
 		<header class="header" >
 			{% block header %}
 			<nav id="nav-main" class="nav-main" role="navigation">
-				{% include "menu.twig" with {'menu': menu.get_items} %}
+				{% include "menu.twig" with {'items': menu.get_items} %} {# Declare a menu ("menu") in "add_to_context" in functions.php #}
 			</nav>
 			{% endblock %}
 		</header>
-
 		<div id="app" class="app">
-	  	<main class="l-container">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
-				{% block footer %}
-				<footer class="l-footer">
-					{% include 'footer.twig' %}
-				</footer>
-				{{ function('wp_footer') }}
-				{% endblock %}
-			</main>
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+			{% block footer %}
+			<footer class="l-footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{% endblock %}
 		</div>
+		{{ function('wp_footer') }}
 	</body>
 </html>

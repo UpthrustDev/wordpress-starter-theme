@@ -1,10 +1,10 @@
 # Wordpress Starter Theme
-Webpack, Babel
+Webpack, Babel, Timber
 
 # Development
 npm run develop
 
-# Production (.babelrc)
+# Production
 npm run build
 
 # Timber

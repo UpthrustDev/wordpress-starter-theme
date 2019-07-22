@@ -1,31 +1,26 @@
-import bowser from 'bowser'
+import Bowser from 'bowser'
 
 const browserClasses = () => {
 
-	// TEST MOBILE/TABLET/DESKTOP
-  if (bowser.mobile) {
+	const browser = Bowser.getParser(window.navigator.userAgent);
 
-    document.documentElement.classList.add('is-mobile')
+	document.documentElement.classList.add(`is-${browser.getPlatformType()}`);
 
-  } else if (bowser.tablet) {
-
-    document.documentElement.classList.add('is-tablet')
-
-  } else {
-
-    document.documentElement.classList.add('is-desktop')
-
-  }
-
-	// TEST EDGE
-  if (bowser.msedge) {
-    document.documentElement.classList.add('is-edge')
-  }
-
-	// TEST IE
-  if (bowser.msie) {
-    document.documentElement.classList.add('is-ie')
-  }
+	if ( browser.isBrowser("Internet Explorer") ) {
+		document.documentElement.classList.add('is-ie');
+	}
+	if ( browser.isBrowser("Edge") ) {
+		document.documentElement.classList.add('is-edge');
+	}
+	if ( browser.isBrowser("Chrome") ) {
+		document.documentElement.classList.add('is-chrome');
+	}
+	if ( browser.isBrowser("Safari") ) {
+		document.documentElement.classList.add('is-safari');
+	}
+	if ( browser.isBrowser("Firefox") ) {
+		document.documentElement.classList.add('is-firefox');
+	}
 
 }
 

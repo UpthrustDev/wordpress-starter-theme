@@ -1,9 +1,11 @@
 {% extends "base.twig" %}
 
 {% block content %}
-<section class="section">
-	<div class="notfound">
-
+<section class="error-container">
+	<div class="error-container__inner">
+		<h1>{{ options.error_404_title }}</h1> <!-- options is added to "add_to_context" in functions.php -->
+		<p>{{ options.error_404_description }}</p> <!-- options is added to "add_to_context" in functions.php -->
 	</div>
+	<div class="error-container__image u-full u-cover u-cover--center lazy"></div>
 </section>
 {% endblock %}
