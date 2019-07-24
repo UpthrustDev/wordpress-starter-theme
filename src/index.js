@@ -4,11 +4,19 @@ import './css/app.scss'
   IMPORT JS
 ----------------------------------------- */
 
+// Utility
 import browserClasses from './js/utils/bowser'
 import lazyLoad from './js/utils/lazy'
-import isInViewCheck from './js/utils/inview'
-import isInViewPlay from './js/utils/inview-play'
+import { isInView, isInViewVideo } from './js/utils/inview'
 import windowHeightInit from './js/utils/window-height'
+
+// Components
+import cPopup from './js/components/c-popup'
+import cTabs from './js/components/c-tabs'
+import cToggleBlock from './js/components/c-toggle-block'
+
+// Pages
+//import this from './js/pages/home'
 
 /* -----------------------------------------
   INIT
@@ -17,11 +25,20 @@ import windowHeightInit from './js/utils/window-height'
 const initScripts = {
 
   init: function () {
+		// Utility
     browserClasses()
     lazyLoad()
-		isInViewCheck()
-		isInViewPlay()
+		isInView()
+		isInViewVideo()
 		windowHeightInit()
+
+		// Components
+		cPopup()
+		cTabs()
+		cToggleBlock()
+
+		// Pages
+		// this()
   }
 
 }

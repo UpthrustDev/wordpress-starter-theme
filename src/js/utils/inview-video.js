@@ -2,7 +2,7 @@ import '@babel/polyfill'
 import 'nodelist-foreach-polyfill'
 import { ElementObserver } from 'viewprt'
 
-const isInViewVideoPlay = () => {
+const isInViewVideo = () => {
 
   const inViewVideoElements = document.querySelectorAll('.js-video-in-view')
 
@@ -22,4 +22,4 @@ const isInViewVideoPlay = () => {
 
 }
 
-export default isInViewPlay
+export default isInViewVideo

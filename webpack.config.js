@@ -1,6 +1,7 @@
 const path = require('path')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -54,7 +55,7 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel-loader',
       query: {
-        presets: ['@babel/preset-env', '@babel/preset-react']
+        presets: ['@babel/preset-env']
       }
     }
     ]
@@ -80,7 +81,11 @@ module.exports = {
       filename: 'app.bundle.css',
       chunkFilename: '[id].bundle.css'
     }),
-    new BundleAnalyzerPlugin()
+    new BundleAnalyzerPlugin(),
+		new BrowserSyncPlugin({
+      files: ['**/*.php', '**/*.twig' ],
+      proxy: 'http://localhost/wordpress'
+    })
   ],
   devtool: 'source-map',
   resolve: {

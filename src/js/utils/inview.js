@@ -2,7 +2,7 @@ import '@babel/polyfill'
 import 'nodelist-foreach-polyfill'
 import { ElementObserver } from 'viewprt'
 
-const isInViewCheck = () => {
+export const isInView = () => {
 
   const inViewElements = document.querySelectorAll('.js-in-view')
 
@@ -14,7 +14,7 @@ const isInViewCheck = () => {
           element.classList.add('is-in-view')
         },
         once: true,
-        offset: -200
+        offset: 0
       })
     })
 
@@ -22,4 +22,22 @@ const isInViewCheck = () => {
 
 }
 
-export default isInViewCheck
+export const isInViewVideo = () => {
+
+  const inViewVideoElements = document.querySelectorAll('.js-in-view-video')
+
+  if ( inViewVideoElements != null ) {
+
+    inViewVideoElements.forEach((inViewVideoElement, index) => {
+      const playVideosObserver = ElementObserver(inViewVideoElement, {
+        onEnter (element, viewport) {
+          element.querySelector('video').play();
+        },
+        once: false,
+        offset: 0
+      })
+    })
+
+  }
+
+}

@@ -6,7 +6,7 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header" >
+		<header class="l-header">
 			{% block header %}
 			<nav id="nav-main" class="nav-main" role="navigation">
 				{% include "menu.twig" with {'items': menu.get_items} %} {# Declare a menu ("menu") in "add_to_context" in functions.php #}

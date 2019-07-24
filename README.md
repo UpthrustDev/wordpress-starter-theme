@@ -1,5 +1,5 @@
 # Wordpress Starter Theme
-Webpack, Babel, Timber
+Webpack, Composer, Timber
 
 # Development
 npm run develop

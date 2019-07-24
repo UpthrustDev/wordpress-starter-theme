@@ -1,8 +1,9 @@
-require('@babel/polyfill')
+const webpack = require('path')
 const path = require('path')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 
 module.exports = {
   mode: 'production',
@@ -52,11 +53,12 @@ module.exports = {
         options: {}
       }
     },
-    {
+		{
       test: /\.js$/,
+      exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
       loader: 'babel-loader',
       query: {
-        presets: ['@babel/preset-env', '@babel/preset-react']
+        presets: ['@babel/preset-env']
       }
     }
     ]
@@ -65,7 +67,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'
   },
-  optimization: {
+	optimization: {
     splitChunks: {
       cacheGroups: {
         commons: {
@@ -75,17 +77,20 @@ module.exports = {
           chunks: 'all'
         }
       }
-    }
+    },
+		minimizer: [
+			new UglifyJSPlugin({
+	      sourceMap: true
+	    }),
+      new OptimizeCSSAssetsPlugin({})
+		]
   },
-  plugins: [
+	plugins: [
     new ProgressBarPlugin(),
     new MiniCssExtractPlugin({
       filename: 'app.bundle.css',
       chunkFilename: 'vendor.[id].bundle.css'
     }),
-    new UglifyJSPlugin({
-      sourceMap: true
-    })
   ],
   resolve: {
     modules: [
