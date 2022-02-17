@@ -1,4 +1,3 @@
-import '@babel/polyfill'
 
 var Blazy = require('blazy')
 

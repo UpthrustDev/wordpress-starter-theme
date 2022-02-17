@@ -6,7 +6,7 @@ module.exports = {
       stage: 0,
       browsers: 'last 1 versions',
       features: {
-        'customProperties': {
+        'custom-properties': {
           strict: false,
           preserve: false
         }

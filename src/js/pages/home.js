@@ -1,4 +1,3 @@
-import '@babel/polyfill'
 import 'nodelist-foreach-polyfill'
 import Swiper from 'swiper/dist/js/swiper.js'
 import { ElementObserver } from 'viewprt'

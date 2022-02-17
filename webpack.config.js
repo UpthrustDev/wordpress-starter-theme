@@ -12,11 +12,19 @@ module.exports = {
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
+          options: {
+            importLoaders: 3,
+            modules: {
+              exportOnlyLocals: false,
+            }
+          }
         },
         {
           loader: 'postcss-loader',
           options: {
-            ident: 'postcss'
+            postcssOptions: {
+              ident: 'postcss'
+            }
           }
         },
         {
@@ -29,7 +37,7 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sourceMap: true,
-            sourceMapContents: false
+            //sourceMapContents: false
           }
         }
       ]
@@ -54,8 +62,10 @@ module.exports = {
     {
       test: /\.js$/,
       loader: 'babel-loader',
-      query: {
-        presets: ['@babel/preset-env']
+      options: {
+        presets: [
+          ['@babel/preset-env']
+        ]
       }
     }
     ]
