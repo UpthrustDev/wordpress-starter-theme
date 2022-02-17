@@ -3,7 +3,7 @@ const path = require('path')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: 'production',
@@ -14,11 +14,19 @@ module.exports = {
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
+          options: {
+            importLoaders: 3,
+            modules: {
+              exportOnlyLocals: false,
+            }
+          }
         },
         {
           loader: 'postcss-loader',
           options: {
-            ident: 'postcss'
+            postcssOptions: {
+              ident: 'postcss',
+            },
           }
         },
         {
@@ -31,7 +39,6 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sourceMap: true,
-            sourceMapContents: false
           }
         }
       ]
@@ -57,8 +64,10 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
       loader: 'babel-loader',
-      query: {
-        presets: ['@babel/preset-env']
+      options: {
+        presets: [
+          ['@babel/preset-env']
+        ]
       }
     }
     ]
@@ -82,7 +91,7 @@ module.exports = {
 			new UglifyJSPlugin({
 	      sourceMap: true
 	    }),
-      new OptimizeCSSAssetsPlugin({})
+      new CssMinimizerPlugin(),
 		]
   },
 	plugins: [

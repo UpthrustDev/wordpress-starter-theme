@@ -15,6 +15,9 @@ import cPopup from './js/components/c-popup'
 import cTabs from './js/components/c-tabs'
 import cToggleBlock from './js/components/c-toggle-block'
 
+// Blocks
+//import this from './js/blocks/hero
+
 // Pages
 //import this from './js/pages/home'
 
@@ -24,10 +27,10 @@ import cToggleBlock from './js/components/c-toggle-block'
 
 const initScripts = {
 
-  init: function () {
+  	init: function () {
 		// Utility
-    browserClasses()
-    lazyLoad()
+    	browserClasses()
+    	lazyLoad()
 		isInView()
 		isInViewVideo()
 		windowHeightInit()
@@ -39,7 +42,7 @@ const initScripts = {
 
 		// Pages
 		// this()
-  }
+  	}
 
 }
 initScripts.init()
